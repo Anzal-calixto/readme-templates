@@ -6,14 +6,14 @@ This project provides a simple test for GPIO control using the sysfs interface i
 
 ## File Structure
 
-- gpio.c: Main application file to initialize and test GPIO functionality.
-- sysfs_gpio.h: Header file containing prototypes and macros.
-- GPIO handling logic uses the sysfs interface (/sys/class/gpio) for configuration and value read/write.
+- `gpio.c`: Main application file to initialize and test GPIO functionality.
+- `sysfs_gpio.h`: Header file containing prototypes and macros.
+- GPIO handling logic uses the sysfs interface (`/sys/class/gpio`) for configuration and value read/write.
 
 ## How It Works
 
-- Inputs: GPIO2_24 and GPIO2_25
-- Outputs: GPIO2_22 and GPIO2_23
+- Inputs: `GPIO2_24` and `GPIO2_25`
+- Outputs: `GPIO2_22` and `GPIO2_23`
 
 In an infinite loop:
 - Reads the values of input pins.
@@ -24,30 +24,31 @@ In an infinite loop:
 To use different GPIOs:
 
 1. Identify your target GPIO bank and pin number.
-2. Modify the following lines in main() of gpio.c:
+2. Modify the following lines in `main()` of gpio.c:
 
-   GPIOInit(BANK, PIN, DIRECTION);
+   `GPIOInit(BANK, PIN, DIRECTION);`
 
-   - Replace BANK with the GPIO bank number.
-   - Replace PIN with the GPIO number within the bank.
-   - Use IN for input and OUT for output.
+   - Replace `BANK` with the GPIO bank number.
+   - Replace `PIN` with the GPIO number within the bank.
+   - Use `IN` for input and `OUT` for output.
 
    Example:
 
-   GPIOInit(1, 17, IN);    // Initializes GPIO1_17 as input  
-   GPIOInit(3, 15, OUT);   // Initializes GPIO3_15 as output
+   `GPIOInit(1, 17, IN);`   // Initializes GPIO1_17 as input  
+   `GPIOInit(3, 15, OUT);`   // Initializes GPIO3_15 as output
 
-3. Update GPIORead() and GPIOWrite() calls accordingly to reflect the new pins.
+3. Update `GPIORead()` and `GPIOWrite()` calls accordingly to reflect the new pins.
 
 ## Build and Run
 
 To compile:
 
-gcc gpio.c -o gpio_test
+`gcc gpio.c -o gpio_test`
 
 To run:
-
+```
 sudo ./gpio_test
+```
 
 Note: Root privileges are required to access GPIO via sysfs.
 
