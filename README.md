@@ -1,4 +1,4 @@
-# PHYTEC SOM Peripheral Example Codes
+# CALIXTO SOM Peripheral Example Codes
 
 This repository contains example C programs demonstrating how to interface and control various hardware peripherals on CALIXTO's System-on-Modules (SOMs). These examples are intended to help developers get started quickly with embedded Linux development.
 
