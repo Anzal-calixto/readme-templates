@@ -81,3 +81,4 @@ sudo usermod -a -G dialout $USER
 
 ## License
 
+© 2025 Calixto Systems Pvt Ltd. All rights reserved.
